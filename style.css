@@ -76,3 +76,36 @@
     background-size: cover;
 }
 
+a[to="pdf"], .pdf, a[class="pdf"], a[to*="f"] {
+    background-color: purple;
+    color:white;
+}
+
+.test-general-sibling ~ * {
+    background-color: deeppink;
+    color:white;
+    padding:1rem;
+}
+
+.annotated {
+    counter-reset: annotate;
+    transition: all .5s ease;
+}
+.annotated h3 {
+    counter-increment: annotate;
+    counter-reset: annotate1;
+}
+.annotated h3:before {
+    content: counter(annotate) ". ";
+}
+.annotated h4 {
+    counter-increment: annotate1;
+}
+.annotated h4:before {
+    content: counter(annotate) "." counter(annotate1) ". ";
+}
+
+.annotated:hover {
+    color: white;
+    background-color: red;
+}
